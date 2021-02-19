@@ -1,0 +1,128 @@
+body{
+    margin:0;
+    padding:0;
+    font-size: 32px;
+}
+
+header{
+    background-color : rgb(33, 88, 16);
+    color:#f2f4f7 ;
+    padding: 3px;
+    border-bottom: 1p #ccc;
+    text-align: center;
+}
+
+main{
+    display: block;
+    margin-left:auto;
+    margin-right: auto;
+    border-bottom:1px solid #ccc;
+}
+.content{
+    background-color: #52e916;
+} 
+
+.titletop{
+    display: block;
+    margin:auto;
+    text-align: center;
+}
+
+.text1{
+    font-weight: bold;
+}
+
+.inner {
+    display: flex;
+    padding:auto;
+    justify-content:space-between;
+    vertical-align: top;
+    height: auto;
+}
+
+footer{
+    background-color: #fff;
+    border-bottom:1px solid #ccc;
+    text-align: center;
+}
+
+p{
+    font-size:20px;
+    text-align: center;
+}
+
+ul{
+    padding: 0;
+    border-top: 1px solid #000000;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    width:900px;
+    margin: 0 auto;
+}
+
+li{
+    height: 300px;
+    width: 300px;
+    text-align: center;
+    list-style-type:none;
+    border: 1px solid #666;
+    background-color: #FFF;
+    display:table-cell;  /* 定義 */
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+li img{
+   height:300px;
+   width: 300px;
+   object-fit: contain;
+}
+
+li:hover{
+    opacity: 0.2;
+    background: #010c16;
+    color:#fff;
+}
+
+.computer{
+    text-align: center;
+    font-size: 24px;
+    font-weight: bolder;
+    color: #226d04;
+}
+
+.judge{
+    text-align: center;
+    font-size: 24px;
+    font-weight: bolder;
+    color: #226d04;
+}
+
+#app {
+    width: 400px;
+    margin: 40px auto;
+    padding: 40px;
+    line-height: 1.5;
+    border: 1px solid #ffffff;
+    border-radius: 5px;
+    background-color: transparent;
+    box-shadow: 2px 2px 5px 0px rgba(200, 200, 200, 1);
+    font-family: "Times New Roman";
+}
+
+#typewriter::after {
+    content: "|";
+    animation-name: blink;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes blink {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

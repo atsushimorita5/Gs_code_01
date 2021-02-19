@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<script src="js/jquery-2.1.3.min.js"></script>
+<link rel="stylesheet" href="css/sample.css">
+<title>じゃんけん</title>
+</head>
+<body>
+
+<header>
+  <h1>アツモリじゃんけん</h1>
+</header>
+
+<section>
+  <div class="titletop">
+    <div id="app">
+      <span id="typewriter"></span>
+  </div>
+    <p class="text1">最初はグー</p>
+    <img src="img/最初は.jpg" >
+    <p class="text1">じゃんけん...</p>
+  </div>
+</section>
+
+<main>
+ <ul>
+    <li id="gu" value="1"><img src="img/グー.jpg" width="300"  ></li>
+    <li id="cho" value="2"><img src="img/チョキー.png" width="300"></li>
+    <li id="pa" value="0"><img src="img/パー.jpg"  width="300"></li>
+  </ul> 
+  
+</main>
+
+<section>
+  <div class="computer">さぁ、敵の手は？？</div>
+  <p id="echo"></p>
+  <div class="judge">勝敗は？</div>
+  <p id ="judgement"></p>
+</section>
+
+<footer></footer>
+
+<script>
+$("#gu").on("click",function(){ 
+  const r= Math.ceil(Math.random()*3);
+  let view = "";
+  let view2 ="";
+  if(r==1){
+    view  ='<img src="comgu.jpg" width=200">';
+    view2 ='<img src="aiko.png" width=200">';
+  }
+
+  if(r==2){
+    view ='<img src="compa.jpg" width="180">';
+    view2 ='<img src="lose.png" width="180">';
+  }
+
+  if(r==3){
+    view ='<img src="comcho.jpg" width="150">';
+    view2 ='<img src="win.png" width="180">';
+  }
+
+  $("#echo").html(view);
+  $("#judgement").html(view2);
+
+});
+
+
+$("#cho").on("click",function(){ 
+  const r= Math.ceil(Math.random()*3);
+  let view="";
+  let view2 ="";
+  if(r==1){
+    view ='<img src="comgu.jpg" width=200">';
+    view2 ='<img src="lose.png" width="180">';
+  }
+
+  if(r==2){
+    view ='<img src="compa.jpg" width="180">';
+    view2 ='<img src="win.png" width="180">';
+  }
+
+  if(r==3){
+   view ='<img src="comcho.jpg" width="150">';
+   view2 ='<img src="aiko.png" width=200">';
+  }
+
+  $("#echo").html(view);
+  $("#judgement").html(view2);
+});
+
+$("#pa").on("click",function(){ 
+  const r= Math.ceil(Math.random()*3);
+  let view="";
+  let view2 ="";
+  if(r==1){
+    view ='<img src="comgu.jpg" width="200">';
+    view2 ='<img src="win.png" width="180">';
+  }
+  if(r==2){
+    view ='<img src="compa.jpg" width="180">';
+    view2 ='<img src="aiko.png" width=200">';
+  }
+  if(r==3){
+    view ='<img src="comcho.jpg" width="150">';
+    view2 ='<img src="lose.png" width="180">';
+  }
+
+  $("#echo").html(view);
+  $("#judgement").html(view2);
+
+});
+
+const typewriter = (param) => {
+    let el = document.querySelector(param.el);
+    let speed = param.speed;
+    let string = param.string.split("");
+
+    string.forEach((char, index) => {
+        setTimeout(() => {
+            el.textContent += char;
+        }, speed * index);
+    });
+};
+
+typewriter({
+    el: "#typewriter",
+    speed: 120,
+    string: "念を使って倒すんだ!!!!!!!!!ゴン!!"
+});
+
+</script>
+
+</body>
+
+</html>
